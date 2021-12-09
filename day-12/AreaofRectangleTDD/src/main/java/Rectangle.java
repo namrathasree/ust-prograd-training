@@ -1,16 +1,32 @@
 public class Rectangle {
-    public double area(double l,double b)
+    double length;
+    double breadth;
+    Rectangle()
     {
-        if(l==b) { throw new IllegalArgumentException("Length and Breadth cannot be equal"); }
-        if(l<=0) { throw new IllegalArgumentException("Length cannot be zero or negative"); }
-        if(b<=0) { throw new IllegalArgumentException("Breadth cannot be zero or negative"); }
-        return l*b;
+        this.length=0.0;
+        this.breadth=0.0;
     }
-    public double perimeter(double l,double b)
+    Rectangle(double length, double breadth){
+        if(length<=0 || breadth<=0){
+            throw new IllegalArgumentException("Length and breadth should not be less than or equal to zero");
+        }
+        this.length = length;
+        this.breadth = breadth;
+    }
+    public double area(){
+        return length * breadth;
+    }
+
+    public double perimeter(){
+
+        return 2 * (length+breadth);
+    }
+}
+
+class Square extends Rectangle
+{
+    Square(double side)
     {
-        if(l==b) { throw new IllegalArgumentException("Length and Breadth cannot be equal"); }
-        if(l<=0) { throw new IllegalArgumentException("Length cannot be zero or negative"); }
-        if(b<=0) { throw new IllegalArgumentException("Breadth cannot be zero or negative"); }
-        return 2*(l+b);
+        super(side,side);
     }
 }
