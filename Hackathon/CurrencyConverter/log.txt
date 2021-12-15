@@ -1,0 +1,8 @@
+Dec 15, 2021 12:55:02 PM Main main
+INFO: Program Started...
+Dec 15, 2021 12:55:09 PM Main main
+INFO: User selected USD to INR 
+Dec 15, 2021 12:55:12 PM Main main
+INFO: User entered amount  1.0
+Dec 15, 2021 12:55:18 PM Main main
+INFO: Program Stopped...
