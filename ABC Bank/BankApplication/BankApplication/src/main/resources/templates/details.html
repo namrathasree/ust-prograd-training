@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <style>
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.container
+{
+width:382px;
+overflow: hidden;
+margin:auto;
+margin: 35px 70px 50px 450px;
+<!--margin: 20 0 0 450px;-->
+padding: 80px;
+background: #FFFDD0;
+border-radius: 15px ;
+}
+h2
+{
+text-align:center;
+<!--color:#277582;-->
+<!--padding:20px;-->
+}
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a th:href="@{/updateCustomer/{id} (id=${username})}">Update Details</a>
+    <a th:href="@{/deposit/{id} (id=${username})}">Deposit</a>
+    <a href="/balance">Check Balance</a>
+    <a href="/transfer" >Fund Transfer</a>
+</div>
+<div class="container" >
+    <h2>Details</h2><br>
+<h3>Customer Name:  <span th:text="${customerName}"></span></h3>
+<h3>Customer Username:  <span th:text="${username}"></span></h3>
+<h3>Mobile Number:  <span th:text="${mobileNumber}"></span></h3>
+<h3>Address:  <span th:text="${address}"></span></h3>
+<h3>Account Number:  <span th:text="${accountNumber}"></span></h3>
+<!--<h3>Balance:  <span th:text="${balance}"></span></h3>-->
+<form action="/login">
+    <input type="submit" value="Logout"><br><br>
+</form>
+</div>
+</body>
+</html>

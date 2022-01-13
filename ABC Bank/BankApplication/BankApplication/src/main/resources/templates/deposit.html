@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+    <style>
+        * {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+/* Set a style for the submit/register button */
+.deposit-btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.deposit-btn:hover {
+  opacity:1;
+}
+    </style>
+</head>
+<body>
+<form action="/deposit" method="post">
+<!--    <div class="mt-3">-->
+<!--     <span class="text-center text-danger">-->
+<!--        <div th:text="${message}"/>-->
+<!--    </span>-->
+<!--    </div>-->
+    <div class="mt-4">
+     <span class="text-center text-success">
+         <div th:text="${successMessage}"/>
+    </span>
+    </div>
+    <div class="submit-area">
+        <h2>Deposit Amount</h2>
+        <label><b>Enter Username</b></label><br>
+        <input type="text" placeholder="Enter Username" name="username" th:value="${customer.username}" readonly><br><br>
+        <label for="amount"><b>Amount</b></label><br/>
+        <input name="deposit" id="amount" type="number" class="form-control" placeholder="Enter deposit amount"><br>
+        <button id="deposit-btn" class="btn btn-success">Deposit</button>
+    </div>
+</form>
+
+</body>
+</html>

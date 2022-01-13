@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance</title>
+    <style>
+        .navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+    </style>
+</head>
+<body>
+<div class="navbar">
+
+    <a href="/balance">Check Balance</a>
+    <a href="/transfer" >Fund Transfer</a>
+</div>
+<h6 style="font-size:20px;color:green;text-align:center"><small><span th:text="${message}"></span></small></h6>
+<h4 align="center"><span th:text="${name}"></span></h4>
+<p style="font-size:20px;text-align:center">Balance : <small>₹<span th:text="${balance}"></span></small></p>
+</body>
+</html>
