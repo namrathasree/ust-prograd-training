@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+    <style>
+    .navigation {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: green;
+  color: white;
+}
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+ background-color: darkgrey;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+button{
+color:green;
+}
+    </style>
+</head>
+<body>
+<!--<h1>Movies List</h1>-->
+<!--<span th:text="${message}"/>-->
+<div class="navigation">
+    <a href="/">Home</a>
+    <a th:href="@{/{userName}/myBookings (userName=${userName})}">My Bookings</a>
+    <a class="active" href="#" style="float:right" th:text="${userName}"></a>
+    <a href="/">Logout</a>
+</div>
+<h4>Movie Shows for <span th:text="${movieName}"/></h4>
+
+<table>
+    <thead>
+    <tr>
+        <th>Movie Date</th>
+        <th>Movie Timing</th>
+        <th>Book Ticket</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="show: ${shows}">
+        <td th:text="${show.date}"></td>
+        <td th:text="${show.time}"></td>
+        <td>
+            <button> <a class="btn btn-success" th:href="@{/{userName}/seats/{id} (userName=${userName},id=${show.id})}">Book Tickets</a> </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

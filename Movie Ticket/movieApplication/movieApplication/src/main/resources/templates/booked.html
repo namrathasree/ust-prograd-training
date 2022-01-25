@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+    <style>
+.navigation {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: green;
+  color: white;
+}</style>
+</head>
+<body>
+
+<div class="navigation">
+    <a href="/">Home</a>
+    <a th:href="@{/{userName}/myBookings (userName=${userName})}">My Bookings</a>
+    <a class="active" href="#" style="float:right" th:text="${userName}"></a>
+    <a href="/">Logout</a>
+</div>
+<h3>Congratulations! Your Tickets are Booked</h3>
+
+<h5 style="color:blue;">PLEASE CHECK YOUR TICKETS IN MY BOOKINGS</h5>
+
+
+
+</body>
+</html>
